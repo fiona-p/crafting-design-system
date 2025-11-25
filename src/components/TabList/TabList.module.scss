@@ -1,0 +1,43 @@
+.tabListWrapper {
+  overflow-x: auto; /* allow horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+@mixin tabList() {
+  display: flex;
+  white-space: nowrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 16px; /* no measurements on Figma but wil choose 'S' from spacings */
+  background-color: #e1dede;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+.tabList {
+  @include tabList;
+
+  &.pill {
+    gap: 8px; /* 2XS */
+
+    &.horizontal {
+      flex-direction: row;
+    }
+
+    &.vertical {
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      gap: 12px; /* XS */
+    }
+  }
+
+  &.underline {
+    gap: 24px; /* L */
+
+    @media (min-width: 768px) {
+      gap: 32px; /*XL */
+    }
+  }
+}

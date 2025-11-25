@@ -1,0 +1,37 @@
+.badge {
+  display: inline-flex; /* makes width fit content */
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  min-width: 46px;
+  height: 22px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--badge-neutral);
+  white-space: nowrap;
+  color: var(--dark-font-color);
+}
+
+@media (min-width: 768px) {
+  .badge {
+    min-width: 54px;
+    height: 26px;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+}
+
+.badge.neutral {
+  background-color: var(--badge-neutral);
+}
+
+.badge.positive {
+  background-color: var(--badge-postive);
+}
+
+.badge.negative {
+  background-color: var(--badge-negative);
+}

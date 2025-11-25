@@ -1,0 +1,166 @@
+.tab,
+.tab::before,
+.tab::after {
+  box-sizing: border-box;
+}
+
+.tab {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  line-height: 150%; /* equivalent to 1.5 */
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative; /* Needed for ::after underline */
+  flex-shrink: 0; /*  Do not shrink flex items if space is limited. */
+}
+
+/* === TAB: PILL === */
+.tab.pill {
+  min-width: 62px;
+  height: 42px;
+  border-radius: 100px;
+  border: 1px solid;
+  padding: 0 12px;
+}
+
+/* NOTE: As using plain css can't nest media query inside tab */
+@media (min-width: 768px) {
+  .tab.pill {
+    padding: 0px 16px;
+    min-width: 70px;
+    height: 50px;
+  }
+}
+
+/* --- Inactive State -- TAB: PILL --- */
+.tab.pill.inactive {
+  color: var(--dark-font-color);
+  background-color: var(--pill-unselected-default-bg);
+  border-color: var(--pill-unselected-default-border);
+}
+
+.tab.pill.inactive:hover {
+  background-color: var(--pill-unselected-hover-bg);
+  border-color: var(--pill-unselected-hover-border);
+}
+
+.tab.pill.inactive:active {
+  background-color: var(--pill-unselected-active-bg);
+  border-color: var(--pill-unselected-active-border);
+}
+
+.tab.pill.inactive:focus,
+.tab.pill.inactive:focus-visible {
+  background-color: var(--pill-unselected-focus-bg);
+  border-color: var(--pill-unselected-focus-border);
+  outline: 2px solid var(--pill-unselected-outline-border); /* 2px visible ring */
+  outline-offset: 2px;
+}
+
+/* --- Active State -- TAB: PILL --- */
+.tab.pill.active {
+  color: var(--pill-selected-font-color);
+  background-color: var(--pill-selected-default-bg);
+  border-color: var(--pill-selected-default-border);
+}
+
+.tab.pill.active:hover {
+  background-color: var(--pill-selected-hover-bg);
+  border-color: var(--pill-selected-hover-border);
+}
+
+.tab.pill.active:focus {
+  background-color: var(--pill-selected-focus-bg);
+  border-color: var(--pill-selected-focus-border);
+  outline: 2px solid var(--pill-selected-outline-border); /* 2px visible ring */
+  outline-offset: 2px;
+}
+
+.tab.pill.active:active {
+  background-color: var(--pill-selected-active-bg);
+  border-color: var(--pill-selected-active-border);
+}
+
+/* === TAB: UNDERLINE === */
+.tab.underline {
+  min-width: 38px;
+  height: 42px;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0;
+  position: relative; /* required for pseudo-elements */
+}
+
+@media (min-width: 768px) {
+  .tab.underline {
+    min-width: 38px;
+    height: 50px;
+  }
+}
+
+.tab.underline::after {
+  content: '';
+  position: absolute;
+  left: 1%; /* underline width across*/
+  right: 1%; /*underline width across */
+  bottom: 0px; /* vertical position - at bottom */
+  height: 3px;
+  border-radius: 8px; /*2XS */
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+/* --- Inactive State -- TAB: UNDERLINE --- */
+.tab.underline.inactive::after {
+  background: transparent;
+}
+
+.tab.underline.inactive:hover::after,
+.tab.underline.inactive:active::after {
+  background-color: var(--underline-unselected-hover-border);
+}
+
+/* Focus ring for transparent tab */
+.tab.underline.inactive:focus-visible,
+.tab.underline.inactive:focus {
+  border-radius: 2px; /* this looks better but it should be 8px */
+  outline: 2px solid var(--underline-unselected-outline-border); /* 2px visible ring */
+  outline-offset: 2px; /* 4px away from the element - so it might be 4px */
+}
+
+.tab.underline.inactive:focus-visible::after,
+.tab.underline.inactive:focus::after {
+  background-color: var(--underline-unselected-hover-border);
+}
+
+/* --- Active State -- TAB: UNDERLINE --- */
+.tab.underline.active::after {
+  background: var(--underline-selected-default-border);
+}
+
+.tab.underline.active:hover::after,
+.tab.underline.active:active::after {
+  background: var(--underline-selected-hover-border);
+}
+
+.tab.underline.active:focus-visible,
+.tab.underline.active:focus {
+  border-radius: 2px; /* this looks better but it should be 8px */
+  outline: 2px solid var(--underline-selected-outline-border); /* 2px thick visible ring */
+  outline-offset: 2px;
+}
+
+.badgeSpacing {
+  margin-left: 12px; /*mobile TAB padding 'XS' */
+}
+
+@media (min-width: 768px) {
+  .badgeSpacing {
+    margin-left: 16px; /*desktop TAB padding 'S' - underline has the same spacing visually */
+  }
+}
