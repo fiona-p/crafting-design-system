@@ -1,4 +1,3 @@
-// import styles from './Tab.module.css';
 import styles from './Tab.module.scss';
 import { useTabs } from '../../TabsContext';
 import Badge from '../Badge/Badge';
@@ -14,9 +13,6 @@ export interface TabProps {
 
 const Tab = ({ index, label, badgeLabel, badgeVariant }: TabProps) => {
   const { activeTab, setActiveTab, variant, totalTabs } = useTabs();
-  // console.log('activeTab', activeTab);
-  // console.log('tab index', index);
-
   const isActive = index === activeTab;
   const tabStyle = `${styles.tab} ${styles[variant]} ${
     isActive ? `${styles.active}` : `${styles.inactive}`

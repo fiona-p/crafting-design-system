@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { ReactNode } from 'react';
-// import styles from './TabList.module.css';
+import { ReactElement, useEffect } from 'react';
 import styles from './TabList.module.scss'; // using sass
 import { useTabs } from '../../TabsContext';
+import { TabProps } from '../Tab/Tab';
 
 export type TabListProps = {
-  children: ReactNode;
+  children: ReactElement<TabProps> | ReactElement<TabProps>[];
 };
 
 const TabList = ({ children }: TabListProps) => {

@@ -14,4 +14,5 @@ export interface tabData {
 export interface tabsData {
   tabData: tabData[];
   tabsVariant: TabVariant;
+  tabsOrientation?: Orientation;
 }

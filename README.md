@@ -1,6 +1,6 @@
 ## Frontend – Design System
 
-This project started as a take-home test, which I have continued to develop into a personal playground for building my own reusable components.
+This project started as a take-home test, which I will continue to develop into a personal playground for building my own reusable components and up-skilling in this area.
 
 The repository is built with **Vite** and uses:
 
