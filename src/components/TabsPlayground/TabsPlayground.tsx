@@ -29,8 +29,6 @@ const TabsPlayground = ({ initialData }: Props) => {
   const updateTheme = (theme: Theme) =>
     setConfig((prev) => ({ ...prev, theme: theme }));
 
-  console.log('config', config);
-
   const updateTab = (
     index: number,
     key: 'label' | 'content' | 'badgeLabel' | 'badgeVariant',

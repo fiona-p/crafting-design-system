@@ -2,9 +2,10 @@ import { Meta, StoryFn } from '@storybook/react';
 import Tab, { TabProps } from './Tab';
 import { TabsProvider } from '../../TabsContext';
 import { useTabs } from '../../TabsContext';
-import { TabVariant } from '../../types';
+import { TabVariant, Theme } from '../../types';
 import '../../index.css';
 import './Tab.module.css';
+import { MockThemesProvider } from '../../storybook/mocks/MockThemesProvider';
 
 export default {
   title: 'Components/Tab',
@@ -28,35 +29,45 @@ export default {
       options: ['neutral', 'positive', 'negative'],
       description: 'Badge variant style',
     },
+    theme: {
+      control: { type: 'radio' },
+      options: ['default', 'autumn'],
+      defaultValue: 'default',
+    },
   },
-} as Meta<TabProps & { variant: TabVariant }>;
+} as Meta<TabProps & { variant: TabVariant; theme: Theme }>;
 
 // Template defines how the component is rendered in the Storybook Canvas
 const Template: StoryFn<
   TabProps & {
     variant: TabVariant;
+    theme: Theme;
   }
 > = ({
   variant,
   label,
   badgeLabel,
   badgeVariant,
-}: TabProps & { variant: TabVariant }) => {
+  theme,
+}: TabProps & { variant: TabVariant; theme: Theme }) => {
   return (
     // TabsProvider wraps all tab components and provides context
-    <TabsProvider
-      defaultIndex={-1} // The tab that starts as inactive (0 = first tab)
-      variant={variant} // Passes variant styling into context
-    >
-      <Tab
-        index={0} // Tab index in the list
-        label={label}
-        badgeLabel={badgeLabel} // Optional badge label
-        badgeVariant={badgeVariant} // Optional badge style
-      />
+    <MockThemesProvider theme={theme}>
+      <TabsProvider
+        defaultIndex={-1} // The tab that starts as inactive (0 = first tab)
+        variant={variant} // Passes variant styling into context
+        orientation='horizontal'
+      >
+        <Tab
+          index={0} // Tab index in the list
+          label={label}
+          badgeLabel={badgeLabel} // Optional badge label
+          badgeVariant={badgeVariant} // Optional badge style
+        />
 
-      <ResetButton />
-    </TabsProvider>
+        <ResetButton />
+      </TabsProvider>
+    </MockThemesProvider>
   );
 };
 
@@ -99,11 +110,12 @@ const ResetButton = () => {
 };
 
 export const InteractiveTabWithBadge: StoryFn<
-  TabProps & { variant: TabVariant }
+  TabProps & { variant: TabVariant; theme: Theme }
 > = Template.bind({});
 InteractiveTabWithBadge.args = {
   label: 'Tab 1',
   variant: 'pill',
+  theme: 'default',
 };
 InteractiveTabWithBadge.parameters = {
   docs: {

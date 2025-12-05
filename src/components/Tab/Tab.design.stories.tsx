@@ -1,41 +1,38 @@
-import React from 'react';
 import Tab from './Tab';
-import { TabsContext } from '../../TabsContext';
-import { TabVariant } from '../../types';
+import { MockThemesProvider } from '../../storybook/mocks/MockThemesProvider';
+import { Meta } from '@storybook/react';
+import { MockTabsProvider } from '../../storybook/mocks/MockTabsProvider';
 
-export default {
+const meta: Meta = {
   title: 'Components/Tab/Design Variants',
   component: Tab,
-  parameters: {
-    controls: { disable: true }, // Hide controls panel for visual snapshots
+  args: {
+    theme: 'default',
   },
+  argTypes: {
+    theme: {
+      control: { type: 'radio' },
+      options: ['default', 'autumn'],
+      defaultValue: 'default',
+    },
+    index: { table: { disable: true } },
+    label: { table: { disable: true } },
+    badgeLabel: { table: { disable: true } },
+    badgeVariant: { table: { disable: true } },
+  },
+  decorators: [
+    (Story, context) => {
+      const theme = context.args.theme ?? 'default';
+      return (
+        <MockThemesProvider theme={theme}>
+          <Story />
+        </MockThemesProvider>
+      );
+    },
+  ],
 };
 
-// Shared Mock Provider
-const MockTabsProvider = ({
-  children,
-  activeTab = 0,
-  variant,
-}: {
-  children: React.ReactNode;
-  activeTab?: number;
-  variant: TabVariant;
-}) => {
-  return (
-    <TabsContext.Provider
-      value={{
-        activeTab,
-        setActiveTab: () => {},
-        variant,
-        totalTabs: 3,
-        setTotalTabs: () => {},
-        orientation: 'horizontal',
-      }}
-    >
-      {children}
-    </TabsContext.Provider>
-  );
-};
+export default meta;
 
 // Pseudo state mappings
 const pseudo = {
@@ -46,7 +43,6 @@ const pseudo = {
 };
 
 // Pill Variant – Inactive
-
 export const PillInactiveDefault = () => (
   <MockTabsProvider activeTab={1} variant='pill'>
     <Tab index={0} label='Label' />

@@ -1,46 +1,44 @@
-:root {
-  .theme-default {
-    --background: #ededef;
-    --content: #222;
-    /* Unselected Pill */
-    --dark-font-color: #1b2134;
-    --light-font-color: #ffffff;
-    --pill-unselected-default-bg: white;
-    --pill-unselected-default-border: #d3d3dc;
-    --pill-unselected-hover-bg: #f6f6fa;
-    --pill-unselected-hover-border: #c4c5cf;
-    --pill-unselected-active-bg: #f1f1f7;
-    --pill-unselected-active-border: #d3d3dc;
-    --pill-unselected-focus-bg: white;
-    --pill-unselected-focus-border: #d3d3dc;
-    --pill-unselected-outline-border: #000000; /*In design */
+.theme-default {
+  --background: #ededef;
+  --content: #222;
+  /* Unselected Pill */
+  --dark-font-color: #1b2134;
+  --light-font-color: #ffffff;
+  --pill-unselected-default-bg: white;
+  --pill-unselected-default-border: #d3d3dc;
+  --pill-unselected-hover-bg: #f6f6fa;
+  --pill-unselected-hover-border: #c4c5cf;
+  --pill-unselected-active-bg: #f1f1f7;
+  --pill-unselected-active-border: #d3d3dc;
+  --pill-unselected-focus-bg: white;
+  --pill-unselected-focus-border: #d3d3dc;
+  --pill-unselected-outline-border: #000000; /*In design */
 
-    /* Selected Pill */
-    --pill-selected-font-color: #ffffff;
-    --pill-selected-default-bg: #1b2134;
-    --pill-selected-default-border: #1b2134;
-    --pill-selected-hover-bg: #343a4e;
-    --pill-selected-hover-border: #343a4e;
-    --pill-selected-active-bg: #585d71;
-    --pill-selected-active-border: #585d71;
-    --pill-selected-focus-bg: #1b2134;
-    --pill-selected-focus-border: #1b2134;
-    --pill-selected-outline-border: #1b2134;
+  /* Selected Pill */
+  --pill-selected-font-color: #ffffff;
+  --pill-selected-default-bg: #1b2134;
+  --pill-selected-default-border: #1b2134;
+  --pill-selected-hover-bg: #343a4e;
+  --pill-selected-hover-border: #343a4e;
+  --pill-selected-active-bg: #585d71;
+  --pill-selected-active-border: #585d71;
+  --pill-selected-focus-bg: #1b2134;
+  --pill-selected-focus-border: #1b2134;
+  --pill-selected-outline-border: #1b2134;
 
-    /* Unselected Underline */
-    --underline-unselected-hover-border: #c4c5cf;
-    --underline-unselected-outline-border: #1b2134;
+  /* Unselected Underline */
+  --underline-unselected-hover-border: #c4c5cf;
+  --underline-unselected-outline-border: #1b2134;
 
-    /* Selected Underline */
-    --underline-selected-default-border: #1b2134;
-    --underline-selected-hover-border: #1b2134;
-    --underline-selected-outline-border: #1b2134;
+  /* Selected Underline */
+  --underline-selected-default-border: #1b2134;
+  --underline-selected-hover-border: #1b2134;
+  --underline-selected-outline-border: #1b2134;
 
-    /* Badge */
-    --badge-postive: #b1ffc7;
-    --badge-negative: #ffbfb1;
-    --badge-neutral: #f1f1f7;
-  }
+  /* Badge */
+  --badge-postive: #b1ffc7;
+  --badge-negative: #ffbfb1;
+  --badge-neutral: #f1f1f7;
 }
 
 .theme-autumn {
