@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import TabsDocPage from './pages/tabsDocPage';
+import TabsDocPage from './pages/tabsDocPage/tabsDocPage';
 import Home from './pages/home/Home';
 
 function App() {

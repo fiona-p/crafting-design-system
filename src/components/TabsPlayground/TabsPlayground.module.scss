@@ -1,0 +1,51 @@
+.tabsPlayground {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.playgroundCard,
+.previewCard {
+  padding: 1.25rem;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+}
+
+.controlsGrid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.controlsGridSelect {
+  margin-left: 0.5rem;
+}
+
+.tabRow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.resetBtn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background: #dc2626;
+}
+
+input,
+select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
