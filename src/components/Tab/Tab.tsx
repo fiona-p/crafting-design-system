@@ -28,7 +28,6 @@ const Tab = ({ index, label, badgeLabel, badgeVariant }: TabProps) => {
     switch (event.key) {
       case 'ArrowRight':
         // Move to the next tab - eg; 5 / 5 remainder = 0
-        console.log('activeTab ', activeTab);
         moveFocus((activeTab + 1) % totalTabs, setActiveTab);
         event.preventDefault(); // prevent the browser from scrolling horizontally
         break;

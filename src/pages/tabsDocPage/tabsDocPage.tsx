@@ -3,11 +3,34 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import oneDark from 'react-syntax-highlighter/dist/esm/styles/prism/one-dark';
 import TabsStaticExample from '../../components/TabsStaticExample';
 import TabsPlayground from '../../components/TabsPlayground/TabsPlayground';
+import Tabs from '../../components/Tabs/Tabs';
+import TabList from '../../components/TabList/TabList';
+import Tab from '../../components/Tab/Tab';
+import TabPanel from '../../components/TabPanel/TabPanel';
 
 const TabsDocPage = () => {
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
+    <div className='container'>
       <h1>Tabs Documentation & Playground</h1>
+
+      <Tabs variant='pill' orientation='horizontal'>
+        <TabList>
+          <Tab
+            index={0}
+            label='Option A: Static Tabs'
+            // badgeLabel='New'
+            // badgeVariant='positive'
+          />
+          <Tab
+            index={1}
+            label='Option B: Data-driven Tabs'
+            // badgeLabel='!'
+            // badgeVariant='negative'
+          />
+        </TabList>
+        <TabPanel index={0}>Content 1</TabPanel>
+        <TabPanel index={1}>Content 2</TabPanel>
+      </Tabs>
 
       <section className='spacingMarginBottom'>
         <h2>Option A: Static Tabs</h2>

@@ -7,7 +7,7 @@ export const tabsMockData: tabsData = {
     {
       label: 'label 1',
       badge: {
-        badgeLabel: 'badge',
+        badgeLabel: 'Info',
         badgeVariant: 'neutral',
       },
       content: 'content for first panel',

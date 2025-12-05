@@ -117,7 +117,7 @@ const TabsPlayground = ({ initialData }: Props) => {
         <h3>Edit Tabs</h3>
 
         {config.tabData.map((tab, index) => (
-          <div key={index} className='tab-row'>
+          <div key={index} className={styles.tabRow}>
             <label htmlFor='updateLabel' className='sr-only'>
               Update tab label
             </label>
@@ -152,7 +152,7 @@ const TabsPlayground = ({ initialData }: Props) => {
               Update Badge variant
             </label>
             <select
-              value={tab.badge?.badgeVariant || 'neutral'}
+              value={tab.badge?.badgeVariant || 'none'}
               onChange={(e) => updateTab(index, 'badgeVariant', e.target.value)}
               id='updateBadgeVariant'
             >
