@@ -10,7 +10,7 @@ const TabsDocumentation = () => {
     <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
       <h1>Tabs Documentation & Playground</h1>
 
-      <Tabs variant='pill' orientation='horizontal'>
+      <Tabs variant='pill' orientation='horizontal' theme='default'>
         <TabList>
           <Tab index={0} label='Option A: Static Tabs' />
           <Tab index={1} label='Option B: Data-driven Tabs' />

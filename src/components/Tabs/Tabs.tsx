@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { TabsProvider } from '../../TabsContext';
+import { ThemesProvider } from '../../ThemesContext';
 import { Orientation, TabVariant } from '../../types';
 
 export interface TabsProps {
@@ -7,6 +8,7 @@ export interface TabsProps {
   defaultIndex?: number;
   variant: TabVariant;
   orientation: Orientation;
+  theme?: 'default' | 'autumn'; // add more themes later
 }
 
 const Tabs = ({
@@ -14,15 +16,18 @@ const Tabs = ({
   defaultIndex = 0,
   variant,
   orientation,
+  theme = 'default',
 }: TabsProps) => {
   return (
-    <TabsProvider
-      defaultIndex={defaultIndex}
-      variant={variant}
-      orientation={orientation}
-    >
-      {children}
-    </TabsProvider>
+    <ThemesProvider theme={theme}>
+      <TabsProvider
+        defaultIndex={defaultIndex}
+        variant={variant}
+        orientation={orientation}
+      >
+        {children}
+      </TabsProvider>
+    </ThemesProvider>
   );
 };
 

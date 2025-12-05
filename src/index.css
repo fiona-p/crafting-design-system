@@ -1,44 +1,85 @@
 :root {
-  --background: #ededef;
-  --content: #222;
-  /* Unselected Pill */
-  --dark-font-color: #1b2134;
-  --light-font-color: #ffffff;
-  --pill-unselected-default-bg: white;
-  --pill-unselected-default-border: #d3d3dc;
-  --pill-unselected-hover-bg: #f6f6fa;
-  --pill-unselected-hover-border: #c4c5cf;
-  --pill-unselected-active-bg: #f1f1f7;
-  --pill-unselected-active-border: #d3d3dc;
-  --pill-unselected-focus-bg: white;
-  --pill-unselected-focus-border: #d3d3dc;
-  --pill-unselected-outline-border: #000000; /*In design */
+  .theme-default {
+    --background: #ededef;
+    --content: #222;
+    /* Unselected Pill */
+    --dark-font-color: #1b2134;
+    --light-font-color: #ffffff;
+    --pill-unselected-default-bg: white;
+    --pill-unselected-default-border: #d3d3dc;
+    --pill-unselected-hover-bg: #f6f6fa;
+    --pill-unselected-hover-border: #c4c5cf;
+    --pill-unselected-active-bg: #f1f1f7;
+    --pill-unselected-active-border: #d3d3dc;
+    --pill-unselected-focus-bg: white;
+    --pill-unselected-focus-border: #d3d3dc;
+    --pill-unselected-outline-border: #000000; /*In design */
 
-  /* Selected Pill */
+    /* Selected Pill */
+    --pill-selected-font-color: #ffffff;
+    --pill-selected-default-bg: #1b2134;
+    --pill-selected-default-border: #1b2134;
+    --pill-selected-hover-bg: #343a4e;
+    --pill-selected-hover-border: #343a4e;
+    --pill-selected-active-bg: #585d71;
+    --pill-selected-active-border: #585d71;
+    --pill-selected-focus-bg: #1b2134;
+    --pill-selected-focus-border: #1b2134;
+    --pill-selected-outline-border: #1b2134;
+
+    /* Unselected Underline */
+    --underline-unselected-hover-border: #c4c5cf;
+    --underline-unselected-outline-border: #1b2134;
+
+    /* Selected Underline */
+    --underline-selected-default-border: #1b2134;
+    --underline-selected-hover-border: #1b2134;
+    --underline-selected-outline-border: #1b2134;
+
+    /* Badge */
+    --badge-postive: #b1ffc7;
+    --badge-negative: #ffbfb1;
+    --badge-neutral: #f1f1f7;
+  }
+}
+
+.theme-autumn {
+  --background: #fff8f0;
+  --content: #2c1a0f;
+
+  /* Pill Unselected */
+  --pill-unselected-default-bg: #fff3e0;
+  --pill-unselected-default-border: #e0c4b8;
+  --pill-unselected-hover-bg: #ffe5cc;
+  --pill-unselected-hover-border: #d4b9a0;
+  --pill-unselected-active-bg: #ffd9b3;
+  --pill-unselected-active-border: #cfa389;
+  --pill-unselected-focus-bg: #fff3e0;
+  --pill-unselected-focus-border: #e0c4b8;
+  --pill-unselected-outline-border: #cfa389;
+
+  /* Pill Selected */
   --pill-selected-font-color: #ffffff;
-  --pill-selected-default-bg: #1b2134;
-  --pill-selected-default-border: #1b2134;
-  --pill-selected-hover-bg: #343a4e;
-  --pill-selected-hover-border: #343a4e;
-  --pill-selected-active-bg: #585d71;
-  --pill-selected-active-border: #585d71;
-  --pill-selected-focus-bg: #1b2134;
-  --pill-selected-focus-border: #1b2134;
-  --pill-selected-outline-border: #1b2134;
+  --pill-selected-default-bg: #b85c2c;
+  --pill-selected-default-border: #b85c2c;
+  --pill-selected-hover-bg: #d9774b;
+  --pill-selected-hover-border: #d9774b;
+  --pill-selected-active-bg: #e6997f;
+  --pill-selected-active-border: #e6997f;
+  --pill-selected-focus-bg: #b85c2c;
+  --pill-selected-focus-border: #b85c2c;
 
-  /* Unselected Underline */
-  --underline-unselected-hover-border: #c4c5cf;
-  --underline-unselected-outline-border: #1b2134;
-
-  /* Selected Underline */
-  --underline-selected-default-border: #1b2134;
-  --underline-selected-hover-border: #1b2134;
-  --underline-selected-outline-border: #1b2134;
+  /* Underline Selected/Unselected */
+  --underline-unselected-hover-border: #d4b9a0;
+  --underline-unselected-outline-border: #b85c2c;
+  --underline-selected-default-border: #b85c2c;
+  --underline-selected-hover-border: #d9774b;
+  --underline-selected-outline-border: #b85c2c;
 
   /* Badge */
-  --badge-postive: #b1ffc7;
-  --badge-negative: #ffbfb1;
-  --badge-neutral: #f1f1f7;
+  --badge-positive: #ffc9a3;
+  --badge-negative: #ff7f50;
+  --badge-neutral: #ffe6cc;
 }
 
 body {

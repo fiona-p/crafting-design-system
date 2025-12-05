@@ -1,23 +1,17 @@
 import { useState } from 'react';
-import { BadgeVariant, Orientation, tabsData, TabVariant } from '../../types';
+import {
+  BadgeVariant,
+  Orientation,
+  tabsData,
+  TabVariant,
+  Theme,
+} from '../../types';
 import Tabs from '../Tabs/Tabs';
 import TabList from '../TabList/TabList';
 import Tab from '../Tab/Tab';
 import TabPanel from '../TabPanel/TabPanel';
 import styles from './TabsPlayground.module.scss';
-
-export interface TabsConfig {
-  tabsVariant: TabVariant;
-  tabsOrientation: Orientation;
-  tabData: {
-    label: string;
-    content: string;
-    badge?: {
-      badgeLabel: string;
-      badgeVariant: BadgeVariant;
-    };
-  }[];
-}
+import { ThemesProvider } from '../../ThemesContext';
 
 interface Props {
   initialData: tabsData;
@@ -31,6 +25,11 @@ const TabsPlayground = ({ initialData }: Props) => {
 
   const updateOrientation = (orientation: Orientation) =>
     setConfig((prev) => ({ ...prev, tabsOrientation: orientation }));
+
+  const updateTheme = (theme: Theme) =>
+    setConfig((prev) => ({ ...prev, theme: theme }));
+
+  console.log('config', config);
 
   const updateTab = (
     index: number,
@@ -106,6 +105,18 @@ const TabsPlayground = ({ initialData }: Props) => {
               <option value='vertical'>Vertical</option>
             </select>
           </label>
+          <label>
+            Theme:
+            <select
+              value={config.theme}
+              onChange={(e) => updateTheme(e.target.value as Theme)}
+              className={styles.controlsGridSelect}
+              aria-label='Change tabs theme'
+            >
+              <option value='default'>Default</option>
+              <option value='autumn'>Autumn</option>
+            </select>
+          </label>
           <button className={styles.resetBtn} onClick={reset}>
             Reset to defaults
           </button>
@@ -168,32 +179,35 @@ const TabsPlayground = ({ initialData }: Props) => {
       {/* Live Preview */}
       <div className={styles.previewCard}>
         <h3>Live Preview</h3>
-        <Tabs
-          variant={config.tabsVariant}
-          orientation={config?.tabsOrientation ?? 'horizontal'}
-        >
-          <TabList>
-            {config.tabData.map((tab, i) => (
-              <Tab
-                key={i}
-                index={i}
-                label={tab.label}
-                {...(tab.badge
-                  ? {
-                      badgeLabel: tab.badge.badgeLabel,
-                      badgeVariant: tab.badge.badgeVariant,
-                    }
-                  : {})}
-              />
-            ))}
-          </TabList>
+        <ThemesProvider theme={config.theme ?? 'default'}>
+          <Tabs
+            variant={config.tabsVariant}
+            orientation={config?.tabsOrientation ?? 'horizontal'}
+            theme={config?.theme ?? 'default'}
+          >
+            <TabList>
+              {config.tabData.map((tab, i) => (
+                <Tab
+                  key={i}
+                  index={i}
+                  label={tab.label}
+                  {...(tab.badge
+                    ? {
+                        badgeLabel: tab.badge.badgeLabel,
+                        badgeVariant: tab.badge.badgeVariant,
+                      }
+                    : {})}
+                />
+              ))}
+            </TabList>
 
-          {config.tabData.map((tab, i) => (
-            <TabPanel key={i} index={i}>
-              {tab.content}
-            </TabPanel>
-          ))}
-        </Tabs>
+            {config.tabData.map((tab, i) => (
+              <TabPanel key={i} index={i}>
+                {tab.content}
+              </TabPanel>
+            ))}
+          </Tabs>
+        </ThemesProvider>
       </div>
     </div>
   );
