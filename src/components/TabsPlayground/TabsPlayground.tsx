@@ -166,9 +166,8 @@ const TabsPlayground = ({ initialData }: Props) => {
       </div>
 
       {/* Live Preview */}
-      <div className='preview-card'>
+      <div className={styles.previewCard}>
         <h3>Live Preview</h3>
-
         <Tabs
           variant={config.tabsVariant}
           orientation={config?.tabsOrientation ?? 'horizontal'}

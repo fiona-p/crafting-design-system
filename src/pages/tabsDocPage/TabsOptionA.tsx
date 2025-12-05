@@ -6,6 +6,7 @@ import { optionACode } from '../../mockData';
 const TabsOptionA = () => (
   <section className='spacingMarginBottom'>
     <h2>Option A: Static Tabs</h2>
+    <h3>Live Preview</h3>
     <TabsStaticExample />
     <div>
       <h3>Example of use</h3>
@@ -17,7 +18,7 @@ const TabsOptionA = () => (
           Static tabs are ideal when the structure of your tabs is known ahead
           of time and is unlikely to change. They are not “static” in the sense
           that they never update; they simply require you to define each{' '}
-          {'/<Tab>/'} and {'<TabPanel>'} manually in the JSX.
+          {'<Tab>'} and {'<TabPanel>'} manually in the JSX.
         </p>
         <p>
           <strong>Use static tabs when:</strong>

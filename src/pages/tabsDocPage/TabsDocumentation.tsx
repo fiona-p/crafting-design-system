@@ -15,6 +15,7 @@ const TabsDocumentation = () => {
           <Tab index={0} label='Option A: Static Tabs' />
           <Tab index={1} label='Option B: Data-driven Tabs' />
         </TabList>
+        <hr style={{ margin: '2rem 0 0' }} />
         <TabPanel index={0}>
           <TabsOptionA />
         </TabPanel>
@@ -22,8 +23,6 @@ const TabsDocumentation = () => {
           <TabsOptionB />
         </TabPanel>
       </Tabs>
-
-      <hr style={{ margin: '2rem 0' }} />
     </div>
   );
 };
